@@ -1,0 +1,110 @@
+@import "../../App.scss";
+
+.merchant-section {
+}
+.merchant-heading {
+  @include section-heading;
+}
+.merchant-input {
+  @include app-input;
+}
+
+.info {
+  margin: 0 0 0 15px;
+  width: 95%;
+  text-align: end;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  color: #9ca3af;
+}
+
+.password-container {
+  position: relative;
+}
+.password-icon {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.signup-btn {
+  @include submit-btn;
+}
+
+.merchant-account-holder {
+  width: 100%;
+  text-align: center;
+  .merchant-account-holder-cta {
+    @include app-cta;
+  }
+}
+
+.merchant-select-input {
+  width: 100%;
+  margin: 0;
+  height: 55px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 5% auto 0;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  padding: 0px 20px;
+  color: #9ca3af;
+  &:focus {
+    outline: none;
+  }
+}
+.select-option{
+  background-color:  #9ca3af;
+}
+// .ant-select {
+//   width: 96.5% !important;
+//   font-size: 16px;
+//   height: 55px;
+//   font-size: 12px;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 22px;
+//   margin: 5% 0 0 2%;
+//   border: 1px solid #9ca3af;
+//   border-radius: 4px;
+//   .ant-select-selector {
+//     color: black;
+//     border: transparent !important;
+//     height: 55px;
+//   }
+// }
+
+.validations {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+.validation-container {
+  display: flex;
+  align-items: center;
+  &:nth-child(1) {
+    color: #228b22;
+  }
+  &:nth-child(2) {
+    color: #6b7280;
+  }
+  &:nth-child(3) {
+    color: #ff0606;
+  }
+}
+.validation-text {
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 5px;
+}

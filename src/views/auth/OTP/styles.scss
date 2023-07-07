@@ -1,0 +1,29 @@
+@import "../../../App.scss";
+
+.otp-section {
+}
+
+.otp-heading {
+  @include section-heading;
+}
+.otp-subheading {
+  @include sub-text;
+}
+.otp-user-email {
+  color: black;
+}
+.otp-resend {
+  margin-top: 20px;
+}
+.otp-cta {
+  @include app-cta;
+}
+
+.container-style{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  @media only screen and (min-width: 1200px) {
+    width: 60%;
+    }
+}

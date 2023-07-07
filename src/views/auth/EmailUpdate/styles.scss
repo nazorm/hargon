@@ -1,0 +1,12 @@
+@import "../../../App.scss";
+
+
+.email-update-section{
+
+}
+.email-update-section-heading{
+    @include section-heading;
+}
+.email-update-input {
+  @include app-input;
+}
