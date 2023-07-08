@@ -4,10 +4,12 @@ import eyeIcon from "../../assets/eye.svg";
 import { validationState } from "./data";
 import { useNavigate } from "react-router-dom";
 import hargonLogo from "../../assets/logo.svg";
+import { Select } from "antd";
 
 export const MerchantForm = () => {
   const navigate = useNavigate();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [industry, setIndustry] = useState("");
   const [userDetails, setUserDetails] = useState({
     username: "",
     businessName: "",
@@ -15,7 +17,6 @@ export const MerchantForm = () => {
     email: "",
     website: "",
     password: "",
-    industry: "",
   });
 
   const handleDetailChange = (event) => {
@@ -25,6 +26,10 @@ export const MerchantForm = () => {
     });
   };
 
+  const handleChange = (value) => {
+    setIndustry(value);
+  };
+
   const handlePasswordDisplay = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
@@ -32,6 +37,7 @@ export const MerchantForm = () => {
   const handleSubmit = () => {
     const userData = {
       ...userDetails,
+      industry: industry,
     };
     console.log(userData);
     navigate(
@@ -93,23 +99,18 @@ export const MerchantForm = () => {
             {userDetails.phoneNumber} is the new Phone number
           </p>
         )}
-        <select className="merchant-select-input">
-        <option value="Industry" className="select-option" selected disabled>
-            Industry
-          </option>
-          <option value="Agriculture" className="select-option">
-            Agriculture
-          </option>
-          <option value="Oil and Gas" className="select-option">
-            Oil and Gas
-          </option>
-          <option value="Manufacturing" className="select-option">
-            Manufacturing
-          </option>
-          <option value="Media" className="select-option">
-            Media
-          </option>
-        </select>
+
+        <Select
+          defaultValue="Industry"
+          onChange={handleChange}
+          options={[
+            { value: "Industry", label: "Industry", disabled: true },
+            { value: "Agriculture", label: "Agriculture" },
+            { value: "Oil and Gas", label: "Oil and Gas" },
+            { value: "Manufacturing", label: "Manufacturing" },
+            { value: "Media", label: "Media" },
+          ]}
+        />
 
         <input
           type="email"
